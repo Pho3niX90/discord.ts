@@ -1,6 +1,6 @@
 {
-  "name": "@typeit/discord",
-  "version": "4.0.8",
+  "name": "@pho3nix90/discordts",
+  "version": "4.1.11",
   "description": "Create your discord bot by using TypeScript and decorators!",
   "main": "index.js",
   "types": "index.d.ts",
@@ -12,14 +12,14 @@
     "*"
   ],
   "bugs": {
-    "url": "https://github.com/OwenCalvin/discord.ts/issue",
-    "email": "owen.gombas@gmail.com"
+    "url": "",
+    "email": "shaun@jvn.sx"
   },
-  "author": "Owen Calvin",
+  "author": "Shaun JVN",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OwenCalvin/discord.ts"
+    "url": "https://github.com/Pho3niX90/discord.ts.git"
   },
   "keywords": [
     "typescript",

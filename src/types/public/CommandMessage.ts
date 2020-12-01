@@ -8,8 +8,7 @@ import {
   DiscordInfos,
   DCommand,
   Client,
-  RuleBuilder,
-  Rule
+  RuleBuilder
 } from "../..";
 
 export class CommandMessage<
@@ -55,7 +54,7 @@ export class CommandMessage<
       const value = argsValues[index];
       const numberValue = Number(value);
 
-      message.args[normalized] = Number.isNaN(numberValue) ? value : numberValue;
+      message.args[normalized] = Number.isNaN(numberValue) || !Number.isSafeInteger(numberValue) ? value : numberValue;
     });
   }
 }

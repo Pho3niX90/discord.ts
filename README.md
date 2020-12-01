@@ -1,18 +1,18 @@
-<p align="center">
+<div align="center">
   <br/>
   <img src="https://i.imgur.com/afS1H2x.png" width="150px">
   <br/>
   <br/>
   <h1 align="center">
     <p  align="center">
-      discord.ts (@typeit/discord)
+      discord.ts (@pho3nix90/discordts)
     </p>
   </h1>
   <p align="center">
     Create your discord bot by using TypeScript and decorators!  
   </p>
   <br/>
-</p>
+</div>
 
 ## Introduction
 This module is built on **[`discord.js`](https://discordjs.guide/)**, so the internal behavior (methods, properties, ...) is the same.
@@ -53,9 +53,9 @@ This module is built on **[`discord.js`](https://discordjs.guide/)**, so the int
 You can also find help with the [different projects that use discord.ts](https://github.com/OwenCalvin/discord.ts/network/dependents?package_id=UGFja2FnZS00Njc1MzYwNzU%3D) and in the [examples folder](https://github.com/OwenCalvin/discord.ts/tree/master/examples)
 
 ## 💾 Installation
-Use [`npm`](https://www.npmjs.com/package/@typeit/discord) or `yarn` to install `@typeit/discord` with `discord.js`:
+Use [`npm`](https://www.npmjs.com/package/@pho3nix90/discordts) or `yarn` to install `@pho3nix90/discordts` with `discord.js`:
 ```sh
-npm i @typeit/discord discord.js
+npm i @pho3nix90/discordts discord.js
 ```
 
 Your tsconfig.json should look like this:
@@ -101,8 +101,8 @@ Allows you to change the prefix character of a variable.
 **You must specify the glob path(s) where your decorated classes are**
 
 ```typescript
-// Use the Client that are provided by @typeit/discord NOT discord.js
-import { Client } from "@typeit/discord";
+// Use the Client that are provided by @pho3nix90/discordts NOT discord.js
+import { Client } from "@pho3nix90/discordts";
 
 async function start() {
   const client = new Client({
@@ -130,7 +130,7 @@ abstract class AppDiscord {
 Then you must declare it as a Discord app class with the `@Discord` decorator :
 
 ```typescript
-import { Discord } from "@typeit/discord";
+import { Discord } from "@pho3nix90/discordts";
 
 @Discord() // Decorate the class
 abstract class AppDiscord {
@@ -147,7 +147,7 @@ import {
   Discord,
   On,
   Once
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 @Discord()
 abstract class AppDiscord {
@@ -177,7 +177,7 @@ import {
   On,
   Client,
   ArgsOf
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 @Discord()
 abstract class AppDiscord {
@@ -209,7 +209,7 @@ import {
   Command,
   CommandMessage,
   CommandNotFound
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 // Specify your prefix
 @Discord("!") 
@@ -351,7 +351,7 @@ import * as Path from "path";
 import {
   Discord,
   CommandNotFound
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 // The prefix will be applied to the imported commands
 @Discord("!", {
@@ -376,7 +376,7 @@ Here is an example of what your command file should look like:
 import {
   Command,
   CommandMessage
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 // Do not have to decorate the class with @Discord
 // It applied the parameters of the @Discord decorator that imported it
@@ -398,7 +398,7 @@ export abstract class Bye {
 import {
   On,
   ArgsOf
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 // Do not have to decorate the class with @Discord
 // It applied the parameters of the @Discord decorator that imported it
@@ -420,7 +420,7 @@ import {
   ClassCommand,
   Command,
   CommandMessage
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 @Discord("!")
 @Description("Admin commands")
@@ -436,7 +436,7 @@ export abstract class Bye {
 
 To retrieve these informations, you can use the `Client` static methods:  
 ```typescript
-import { Client } from "@typeit/discord";
+import { Client } from "@pho3nix90/discordts";
 
 Client.getCommands();         // @Command
 Client.getCommandsNotFound(); // @CommandNotFound
@@ -453,7 +453,7 @@ import {
   Command,
   CommandMessage,
   Rules
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 @Discord("!")
 export abstract class Bye {
@@ -474,7 +474,7 @@ import {
   CommandMessage,
   Rules,
   Rule
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 @Discord()
 @Rules(Rule().startWith("!")) // Explicit prefix
@@ -498,7 +498,7 @@ import {
   CommandMessage,
   Rules,
   Rule
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 @Discord("!")
 export abstract class Bye {
@@ -519,7 +519,7 @@ import {
   CommandMessage,
   Rules,
   Rule
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 async function getRules() {
   return [Rule("salut").space("toi").spaceOrEnd()]
@@ -547,7 +547,7 @@ import {
   On,
   Client,
   Guard
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 import { NotBot } from "./NotBot";
 import { Prefix } from "./Prefix";
 
@@ -582,7 +582,7 @@ import {
   Client,
   ArgsOf,
   GuardFunction
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 export const NotBot: GuardFunction<"message"> = (
   [message],
@@ -601,7 +601,7 @@ import {
   Client,
   ArgsOf,
   GuardFunction
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 export function Prefix(text: string, replace: boolean = true) {
   const guard: GuardFunction<"message"> = (
@@ -629,7 +629,7 @@ import {
   Client,
   ArgsOf,
   GuardFunction
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 
 export const NotBot: GuardFunction<"message"> = (
   [message],
@@ -649,7 +649,7 @@ import {
   Command,
   Client,
   Guard
-} from "@typeit/discord";
+} from "@pho3nix90/discordts";
 import { NotBot } from "./NotBot";
 import { Prefix } from "./Prefix";
 
@@ -675,7 +675,7 @@ abstract class AppDiscord {
 You can simply get all the infos about your decorated stuff using:
 
 ```typescript
-import { Client } from "@typeit/discord";
+import { Client } from "@pho3nix90/discordts";
 
 Client.getCommands();         // @Command
 Client.getCommandsNotFound(); // @CommandNotFound
